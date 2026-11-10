@@ -20,36 +20,35 @@
     .hl { font-weight: bold; color: #e74c3c; }
     .note { font-size: 0.85em; color: #888; font-style: italic; margin-top: 6px; }
   </style>
-  
-  
+</head>
 <body>
 <div class="box">
-  <h2 class="">Gabriel's Budget Calculator</h2>
+  <h2>Gabriel's Budget Calculator</h2>
 
-  <div id="s-menu" style="display: none;">
-    <button class="btn" onclick="pickMode(1)" >Gabriel's Income</button>
+  <div id="s-menu">
+    <button class="btn" onclick="pickMode(1)">Gabriel's Income</button>
     <button class="btn" onclick="pickMode(2)">Gabriel's Lump Sum</button>
     <button class="btn" onclick="pickSavingsOnly()">Just Savings</button>
   </div>
 
   <div id="s-em" style="display: none;">
-    <p class="prompt-label">Is the emergency fund full?<br><span style="font-weight:normal;font-size:0.9em;color:#888" class="">(goal ~€6,000)</span></p>
+    <p class="prompt-label">Is the emergency fund full?<br><span style="font-weight:normal;font-size:0.9em;color:#888">(goal ~€6,000)</span></p>
     <button class="btn" onclick="pickEm(true)">Yes — fund is full</button>
-    <button class="btn" onclick="pickEm(false)" >No — still building</button>
-    <button class="btn back" onclick="goTo('s-menu')" >Back</button>
+    <button class="btn" onclick="pickEm(false)">No — still building</button>
+    <button class="btn back" onclick="goTo('s-menu')">Back</button>
   </div>
 
   <div id="s-input" style="display: none;">
     <div class="input-row">
       <input type="number" id="amt" min="0" step="0.01" placeholder="Enter amount (€)">
     </div>
-    <button class="btn" onclick="calc()" >Calculate</button>
+    <button class="btn" onclick="calc()">Calculate</button>
     <button class="btn back" onclick="backFromInput()">Back</button>
   </div>
 
-  <div id="s-results" style="display: block;">
-    <div id="results-body" class="results-body"><h4>Income Allocation</h4><div class="item"><span>Needs (50%)</span><span class="hl">2500.00 €</span></div><div class="item"><span>Wants (30%)</span><span class="hl">1500.00 €</span></div><div class="item"><span>Savings (10%)</span><span class="hl">500.00 €</span></div><div class="item"><span>Emergency Fund (10%)</span><span class="hl">500.00 €</span></div><div class="note">Stop contributions once ~€6,000 is reached — redirect to savings</div><h4>Savings Allocation</h4><div class="item"><span>BrightPensioen (15%)</span><span>75.00 €</span></div><div class="item"><span>Degiro (85%)</span><span>425.00 €</span></div><div class="sub-item"><span>BTC (20%)</span><span>85.00 €</span></div><div class="sub-item"><span>VUAA (40%)</span><span>170.00 €</span></div><div class="sub-item"><span>EUNL (30%)</span><span>127.50 €</span></div><div class="sub-item"><span>IS3N (10%)</span><span>42.50 €</span></div></div>
-    <button class="btn back" onclick="goTo('s-menu')" >Back to menu</button>
+  <div id="s-results" style="display: none;">
+    <div id="results-body" class="results-body"></div>
+    <button class="btn back" onclick="goTo('s-menu')">Back to menu</button>
   </div>
 
 </div>
@@ -153,6 +152,5 @@
     goTo('s-results');
   }
 </script>
-
-
-<div style="height: 55px !important;"></div></body></html>
+</body>
+</html>
